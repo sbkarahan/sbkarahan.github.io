@@ -11,8 +11,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	
+		<style>
+			/* Add tab styles here */
+			.tab {
+				overflow: hidden;
+				border-bottom: 1px solid #ccc;
+				margin-top: 20px;
+			}
+		
+			.tab button {
+				background-color: #f1f1f1;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				padding: 14px 16px;
+				transition: 0.3s;
+			}
+		
+			.tab button:hover {
+				background-color: #ddd;
+			}
+		
+			.tab button.active {
+				background-color: #ccc;
+			}
+		
+			/* Style the tab content */
+			.tab-content {
+				display: none;
+				padding: 16px;
+			}
+		
+			.tab-content.active {
+				display: block;
+			}
+		</style>
+		
 	</head>
-	<body class="is-preload">
+		<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
@@ -35,6 +72,36 @@
 						</div>
 					</section>
 
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>More About My Work</h2>
+							<p>Explore more about my projects and interests through these tabs.</p>
+					
+							<!-- Tabs Navigation -->
+							<div class="tab">
+								<button class="tablinks" onclick="openTab(event, 'Project1')">Project 1</button>
+								<button class="tablinks" onclick="openTab(event, 'Project2')">Project 2</button>
+								<button class="tablinks" onclick="openTab(event, 'Bio')">Bio</button>
+							</div>
+					
+							<!-- Tab Contents -->
+							<div id="Project1" class="tab-content">
+								<h3>Project 1: Cybersecurity Best Practice Analysis</h3>
+								<p>My first project is a collaborative project for Cybersecurity Best Practice Analysis using CSRIC data...</p>
+							</div>
+					
+							<div id="Project2" class="tab-content">
+								<h3>Project 2: State Sponsored Cyber Operations</h3>
+								<p>My second project will analyze state-sponsored cyber operations using data from the Council on Foreign Relations...</p>
+							</div>
+					
+							<div id="Bio" class="tab-content">
+								<h3>My Short Bio</h3>
+								<p>With a commitment to continuous learning, I am a graduate student of Data Science and a Senior Lecturer...</p>
+							</div>
+						</div>
+					</section>
+					
 				<!-- Two -->
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 						
@@ -98,8 +165,8 @@
 						<!-- Gallery -->
 							<div class="gallery style2 medium lightbox onscroll-fade-in">
 								<article>
-									<a href="images/gallery/fulls/01.jpg" class="image">
-										<img src="images/gallery/thumbs/02.jpg" alt="" />
+									<a href="images/gallery/fulls/probstat.jpg" class="image">
+										<img src="images/gallery/thumbs/probstat.jpg" alt="" />
 									</a>
 									<div class="caption">
 										<h3>Statistics and Probability</h3>
@@ -340,6 +407,31 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		
+		<!-- JavaScript-->	
+
+		<script>
+			function openTab(evt, tabName) {
+				var i, tabcontent, tablinks;
+		
+				// Hide all tab contents
+				tabcontent = document.getElementsByClassName("tab-content");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+		
+				// Remove the 'active' class from all tab buttons
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+		
+				// Show the selected tab and add the 'active' class to the corresponding button
+				document.getElementById(tabName).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+		</script>
+		
 
 	</body>
 </html>
