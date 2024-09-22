@@ -2235,6 +2235,40 @@ input, select, textarea {
 			.button.primary:active {
 				background-color: #1ebdd1;
 			}
+<style>
+    /* Center the tab buttons */
+    .tab {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Style for the buttons */
+    .tab button {
+        background-color: #070927; /* Button background color */
+        color: black(0, 0, 255, 0.773); /* Button text color */
+        border: 2px solid #ccc; /* Border styling */
+        padding: 10px 20px; /* Size of the buttons */
+        margin: 0 30px; /* Space between buttons */
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 16px; /* Font size for the buttons */
+        border-radius: 5px; /* Rounded corners to make it rectangular */
+    }
+
+    /* Button hover effect */
+    .tab button:hover {
+        background-color: #0b081a; /* Darker shade on hover */
+    }
+
+    /* Active button styling */
+    .tab button.active {
+        background-color: #130f29; /* Active tab background */
+        border-color: #120e27; /* Active tab border */
+    }
+</style>
+
+
 
 /* Form */
 
